@@ -11,7 +11,7 @@ app.use(morgan('combined')); //ไว้ดู log รายละเอีย�
 app.use(express.static(path.join(__dirname, '/public/')))
 
 app.get("/", (req,res) => {
-    res.send('Hello, Jandy Nat!');
+    res.send('Hello, Jandy Natwalan!');
 })
 
 app.listen(port, () => {
