@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(morgan('combined')); //ไว้ดู log รายละเอียดว่าเข้าจากเครื่องไหน
 app.use(express.static(path.join(__dirname, '/public/')))
@@ -14,6 +14,6 @@ app.get("/", (req,res) => {
     res.send('Hello, Jandy Natwalan!');
 })
 
-app.listen(port, () => {
-    debug("listening on port" + chalk.red(": " + port));
+app.listen(PORT, () => {
+    debug("listening on port" + chalk.red(": " + PORT));
 })
