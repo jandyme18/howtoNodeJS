@@ -10,8 +10,11 @@ const PORT = process.env.PORT || 4000;
 app.use(morgan('combined')); //ไว้ดู log รายละเอียดว่าเข้าจากเครื่องไหน
 app.use(express.static(path.join(__dirname, '/public/')))
 
+app.set("views", "./src/views")
+app.set("view engine", "ejs")
+
 app.get("/", (req,res) => {
-    res.send('Hello, Jandy Natwalan!');
+    res.render('index',{username: 'jandyme18', customers: ["Catareen","Tasia","Frongz"]});
 })
 
 app.listen(PORT, () => {
