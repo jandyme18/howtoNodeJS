@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
-const productsRouter = express.Router();
+const productRouter = express.Router();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -14,15 +14,18 @@ app.use(express.static(path.join(__dirname, '/public/')))
 app.set("views", "./src/views")
 app.set("view engine", "ejs")
 
-productsRouter.route("/").get((req, res) => {
+productRouter.route("/").get((req, res) => {
+    res.render("products");
+});
+
+productRouter.route("/").get((req, res) => {
     res.send("Products are here")
 });
 
+app.use("/products", productRouter);
 
-app.use("/products", productsRouter)
-
-app.get("/", (req,res) => {
-    res.render('index',{username: 'jandyme18', customers: ["Catareen","Tasia","Frongz"]});
+app.get("/", (req, res) => {
+    res.render('index', { username: 'jandyme18', customers: ["Catareen", "Tasia", "Frongz"] });
 })
 
 app.listen(PORT, () => {
