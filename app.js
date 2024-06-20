@@ -14,6 +14,12 @@ app.use(express.static(path.join(__dirname, '/public/')));
 app.set("views", "./src/views")
 app.set("view engine", "ejs")
 
+
+productsRouter.route("/").get((req, res) => {
+    res.render("products");
+});
+
+
 // productsRouter.route("/").get((req, res) => {
 //     res.render("products"),{
 //         products: [
@@ -26,7 +32,7 @@ app.set("view engine", "ejs")
 // });
 
 productsRouter.route("/").get((req, res) => {
-    res.send("Products are here")
+    res.send("Products are here");
 });
 
 app.use("/products", productsRouter);
