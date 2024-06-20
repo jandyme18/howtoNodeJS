@@ -7,15 +7,12 @@
   <h1>Products</h1>\
   <% products.map((product)=>{ %>
     <h4>
-      <a href="/products/<%=product.id %>">
-        <%=product.productTitle %>
-      </a>
+      <a href="/products/<%=product.id %>"><%=product.productTitle %></a>
     </h4>
     <p>
       <%=product.productDescription %>
     </p>
-    <p>Price: <%=product.productPrice %>
-    </p>
+    <p>Price: <%=product.productPrice %> Baht</p>
     <%})%>
 
 </body>
