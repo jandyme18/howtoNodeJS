@@ -15,14 +15,14 @@ app.set("views", "./src/views")
 app.set("view engine", "ejs")
 
 productsRouter.route("/").get((req, res) => {
-    res.render("products"),{
+    res.render("products",{
         products: [
             {productTitle: 'Dish soap', productDescription: 'Formulation 1 Super Clean Dish Soap', productPrice: '45'},
             {productTitle: 'Dish soap 2', productDescription: 'Formulation 2 Super Clean Dish Soap', productPrice: '65'},
             {productTitle: 'Dish soap 3', productDescription: 'Formulation 3 Super Clean Dish Soap', productPrice: '35'},
             {productTitle: 'Dish soap 4', productDescription: 'Formulation 4 Super Clean Dish Soap', productPrice: '55'}
         ],
-    }
+    });
 });
 
 productsRouter.route("/").get((req, res) => {
