@@ -19,6 +19,11 @@
         "productTitle": "Dish soap 4",
         "productDescription": "Formulation 4 Super Clean Dish Soap",
         "productPrice": "55"
+      },
+      {
+        "productTitle": "Dish soap 5",
+        "productDescription": "Formulation 5 Super Super Clean Dish Soap",
+        "productPrice": "155"
       }
     ]
   }
